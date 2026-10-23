@@ -63,7 +63,7 @@ class SimulatedUserImpl(SimulatedUser):
         messages = ([{"role": "user", "content": "\n".join(instructions)}]
                     + self.history[-NR_OF_HISTORY_TURNS:] + [{"role": "user", "content": agent_utterance}])
         response = self._client.chat.completions.create(model=self._model, messages=messages, temperature=self._temperature,
-                                                       max_tokens=150)
+                                                       max_tokens=100)
         answer = response.choices[0].message.content.strip()
         self.history += [{"role": "assistant", "content": agent_utterance}, {"role": "user", "content": answer}]
         return answer
