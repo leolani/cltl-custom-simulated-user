@@ -1,0 +1,4 @@
+.[service]
+openai
+emissor @ git+https://github.com/leolani/emissor@ref_scenarios
+cltl.combot[external] @ git+https://github.com/leolani/cltl-combot.git@ref_scenarios
